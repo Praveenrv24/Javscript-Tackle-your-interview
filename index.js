@@ -109,3 +109,48 @@ console.log(arg2('hi'));
 /* ---- */
 const ar = [3, 2, 1];
 console.log(Math.max(ar));
+
+/* Tagged Templates ----------- */
+function a(arg) {
+  return 'hello ' + arg;
+}
+
+const sen = a`hi`;
+console.log(sen);
+
+//Map in ES6 to hold objects as keys--
+
+const a1 = {};
+const a2 = {
+  num: 1,
+};
+let x = {};
+x[a1] = 1;
+x[a2] = 3;
+
+const ne = new Map();
+
+ne.set(a1, 1);
+ne.set(a2, 2);
+
+console.log(x);
+console.log(ne);
+
+// Two Sum
+
+const num = [3, 2, 4];
+const target = 6;
+
+function sum(num, target) {
+  const map = new Map();
+  const len = num.length;
+  for (i = 0; i < len; i++) {
+    console.log(map[num[i]]);
+    if (map[num[i]] >= 0) {
+      return [map[num[i]], i];
+    }
+    map[target - num[i]] = i;
+  }
+}
+
+console.log(sum(num, target));
